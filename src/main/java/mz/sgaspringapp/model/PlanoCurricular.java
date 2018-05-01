@@ -4,27 +4,18 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Disciplina {
-
+public class PlanoCurricular {
 	@Id
 	private int codigo;
-	private String descricao;
 	
-	public Disciplina() {
+	private String descricao;
+
+	public PlanoCurricular() {
 		
 	}
-
-	public Disciplina(int codigo, String descricao) {
-		this.codigo = codigo;
+	
+	public PlanoCurricular(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public int getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
 	}
 
 	public String getDescricao() {
@@ -34,5 +25,5 @@ public class Disciplina {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-			
+	
 }

@@ -14,9 +14,9 @@
 
   <body class="bg-light">
 
-		<nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary shadow-sm">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary">
       <div class="container">
-  			<a class="navbar-brand mb-0 h1" href="#"><i class="fas fa-user fa-lg"></i> SGA</a>
+  			<a class="navbar-brand mb-0 h1" href="/"><i class="fas fa-user fa-lg"></i> SGA</a>
   		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   			<span class="navbar-toggler-icon"></span>
   		    </button>
@@ -66,19 +66,45 @@
 		</nav>
 
 	<nav aria-label="breadcrumb">
-    <ol class="breadcrumb justify-content-sm-center mb-1">
-      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Sobre</li>
-    </ol>
+			<ol class="breadcrumb justify-content-sm-center mb-1">
+				<li class="breadcrumb-item"><a href="/">Inicio</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Cadastro - Classe</li>
+			</ol>
 	</nav>
 
 	<div class="container row m-auto">
+		
 		<section class="col-sm-12 col-md-9 bg-light border rounded mr-auto p-2">
 
-			<div class="container ">
-
-				<h5>Sobre</h5>
-
+			<div class="container mb-4">
+				<div class="card">
+				  <div class="card-header bg-gradient-primary text-light">
+					<h3>Formulario de Cadastro de Classe</h3>
+				  </div>
+				  <div class="card-body">
+					Forneca os dados da Classe que pretende registar no formulario abaixo.
+				  </div>				
+				</div>
+			</div>
+			
+			<div class="container col-10">
+				<p class="h4">Dados da Classe</p>
+			<div class="container justify-content-sm-center border">
+					<form class="p-2">
+						<div class="form-group">
+							<label for="codigo">Codigo:</label>
+							
+							<input type="number" name="codigo" placeholder="Introduza o codigo da Classe" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label for="descricao">Descricao:</label>
+							<input type="text" name="descricao" placeholder="Introduza a Descricao da Classe" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary">Gravar</button>
+						</div>
+					</form>
+			</div>
 			</div>
 		</section>
 
@@ -100,7 +126,7 @@
 
 	</div>
 
-	<footer class="bg-dark mt-5">
+	<footer class="bg-dark mt-5 mb-0">
 		<div class="container row m-auto p-4">
 			<div class="col-sm-12 col-lg-7 mr-auto">
 				<h5 class="text-light"><i class="fas fa-people-carry"></i> Desenvolvedores</h5>

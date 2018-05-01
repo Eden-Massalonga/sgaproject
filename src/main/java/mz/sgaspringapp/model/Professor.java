@@ -15,7 +15,7 @@ public class Professor {
 	private Date dataNasc;
 	private String formacao;
 	private int telefone;
-	private String nomorada;
+	private String morada;
 	
 	public Professor() {
 		
@@ -69,12 +69,12 @@ public class Professor {
 		this.telefone = telefone;
 	}
 
-	public String getNomorada() {
-		return nomorada;
+	public String getmorada() {
+		return morada;
 	}
 
 	public void setNomorada(String nomorada) {
-		this.nomorada = nomorada;
+		this.morada = nomorada;
 	}
 	
 }

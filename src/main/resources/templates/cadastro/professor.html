@@ -14,7 +14,7 @@
 
   <body class="bg-light">
 
-		<nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary shadow-sm">
       <div class="container">
   			<a class="navbar-brand mb-0 h1" href="#"><i class="fas fa-user fa-lg"></i> SGA</a>
   		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,12 +23,12 @@
 
   			<div class="collapse navbar-collapse" id="navbarSupportedContent">
   				<ul class="navbar-nav ml-auto">
-  				<li class="nav-item active">
+  				<li class="nav-item ">
   					<a class="nav-link" href="/"><i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
   				</li>
 
   				<li class="nav-item dropdown">
-  					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  					<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   						<i class="fas fa-edit"></i> Cadastro
   					</a>
   					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -75,10 +75,56 @@
 	<div class="container row m-auto">
 		<section class="col-sm-12 col-md-9 bg-light border rounded mr-auto p-2">
 
-			<div class="container ">
-
-				<h5>Professor</h5>
-
+			<div class="container mb-4">
+				<div class="border rounded">
+				  <div class="bg-gradient-primary text-light p-4 rounded">
+					<h3 class="text-center">Formulario de Cadastro de Professor</h3>
+				  </div>
+				  <div class="bg-light p-4">
+					<p class="text-success font-weight-bold">Dica:</p>Forneca os dados da Classe que pretende registar no formulario abaixo. <span class="text-danger">Codigo:</span> Valor Numerico. <span class="text-danger">Descricao:</span> Valor Textual.
+				  </div>				
+				</div>
+			</div>
+			
+			<div class="container col-10">
+				<p class="h4">Dados da Professor</p>
+				<div class="container justify-content-sm-center border rounded">
+						<form class="p-2">
+							<div class="form-group">
+								<label for="codigo">Codigo:</label>
+								
+								<input type="number" name="codigo" placeholder="Introduza o codigo da Classe" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<label for="descricao">Nome:</label>
+								<input type="text" name="descricao" placeholder="Introduza a Descricao da Classe" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<label for="descricao">Sexo:</label>
+								<input type="text" name="descricao" placeholder="Introduza a Descricao da Classe" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<label for="descricao">Data de Nascimento:</label>
+								<input type="date" name="descricao" placeholder="Introduza a Descricao da Classe" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<label for="descricao">Formacao:</label>
+								<input type="text" name="descricao" placeholder="Introduza a Descricao da Classe" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<label for="descricao">Telefone:</label>
+								<input type="number" name="descricao" placeholder="Introduza a Descricao da Classe" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<label for="descricao">Morada:</label>
+								<input type="text" name="descricao" placeholder="Introduza a Descricao da Classe" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<button type="reset" class="btn btn-danger">Limpar</button>
+								<button type="submit" class="btn btn-primary ">Gravar</button>
+							</div>
+						</form>
+				</div>
 			</div>
 		</section>
 
