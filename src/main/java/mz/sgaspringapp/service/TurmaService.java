@@ -7,7 +7,7 @@ import mz.sgaspringapp.model.Turma;
 import mz.sgaspringapp.repository.TurmaRepository;
 
 @Service
-public class TurnaService {
+public class TurmaService {
 
 	@Autowired
 	private TurmaRepository tR;

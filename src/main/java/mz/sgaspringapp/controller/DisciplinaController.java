@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import mz.sgaspringapp.model.Disciplina;
 import mz.sgaspringapp.service.DisciplinaService;
@@ -14,7 +15,6 @@ public class DisciplinaController {
 	@Autowired
 	private DisciplinaService dSer;
 	
-	//Inicio do Cadastro da Disciplina
 		@RequestMapping(method = RequestMethod.GET, value = "/disciplina")
 		public String cadastroDisciplina() {		
 				
@@ -22,11 +22,25 @@ public class DisciplinaController {
 		}
 			
 		@RequestMapping(method = RequestMethod.POST, value = "/disciplina")
-		public String cadastrarDisciplina(Disciplina disciplina) {
+		public String cadastrarDisciplina(Disciplina disc) {
 				
-			dSer.cadastraDisciplina(disciplina);
+			dSer.cadastraDisciplina(disc);
 				
 			return "cadastro/disciplina";
 		}
-	//Fim do Cadastro da Disciplina
+		
+		@RequestMapping(method = RequestMethod.GET, value = "/disciplina/lista")
+		public ModelAndView listaDisciplinas() {
+			ModelAndView mv = new ModelAndView("cadastro/disciplina/lista");
+			mv.addObject("lista", dSer.todasDisciplinas());
+			
+			return mv;
+		}
+		
+		@RequestMapping("/disciplinalista/apagar")
+		public String apagarDisciplina(int codigo) {
+			dSer.apagaDisciplina(codigo);
+			
+			return "redirect:/disciplina/lista";
+		}
 }

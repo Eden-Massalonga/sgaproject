@@ -1,5 +1,8 @@
 package mz.sgaspringapp.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +16,19 @@ public class DisciplinaService {
 	private DisciplinaRepository dR;
 	
 	//Cadastro de Disciplina
-		public void cadastraDisciplina(Disciplina disciplina) {
-			dR.save(disciplina);
+		public void cadastraDisciplina(Disciplina disc) {
+			dR.save(disc);
+		}
+		
+		public List <Disciplina> todasDisciplinas(){
+			List <Disciplina> lista = new ArrayList <>();
+			dR.findAll().forEach(lista::add);
+			
+			return lista;
+		}
+		
+		public void apagaDisciplina(int codigo) {
+			dR.deleteById(codigo);
 		}
 		
 }

@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class ProfessorController {
+public class SecretariaController {
 	
-	@RequestMapping("/professor")
-	public String cadastroProfessor() {
-		return "cadastro/professor";
+	@RequestMapping("/secretaria")
+	public String cadastroSecretaria() {
+		return "cadastro/secretaria";
 	}
 }

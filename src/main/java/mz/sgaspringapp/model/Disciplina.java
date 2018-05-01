@@ -1,6 +1,7 @@
 package mz.sgaspringapp.model;
 
 import javax.persistence.Entity;
+
 import javax.persistence.Id;
 
 @Entity
@@ -8,15 +9,15 @@ public class Disciplina {
 
 	@Id
 	private int codigo;
-	private String descricao;
+	private String nomeDisciplina;
 	
 	public Disciplina() {
 		
 	}
 
-	public Disciplina(int codigo, String descricao) {
+	public Disciplina(int codigo, String nomeDisciplina) {
 		this.codigo = codigo;
-		this.descricao = descricao;
+		this.nomeDisciplina = nomeDisciplina;
 	}
 
 	public int getCodigo() {
@@ -27,12 +28,12 @@ public class Disciplina {
 		this.codigo = codigo;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getNomeDisciplina() {
+		return nomeDisciplina;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setNomeDisciplina(String nomeDisciplina) {
+		this.nomeDisciplina = nomeDisciplina;
 	}
 			
 }

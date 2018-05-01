@@ -1,13 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"
+	xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css" />
-  	<link rel="stylesheet" href="css/fontawesome-all.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+  	<link rel="stylesheet" href="../css/fontawesome-all.css" />
   	<link rel="shortcut icon" type="image/x-icon" href="webfonts/user.svg" />
     <title> SGA</title>
   </head>
@@ -68,7 +71,7 @@
 	<nav aria-label="breadcrumb">
 			<ol class="breadcrumb justify-content-sm-center mb-1">
 				<li class="breadcrumb-item"><a href="/">Inicio</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Cadastro - Classe</li>
+				<li class="breadcrumb-item active" aria-current="page">Cadastro - Disciplina</li>
 			</ol>
 	</nav>
 
@@ -79,33 +82,34 @@
 			<div class="container mb-4">
 				<div class="border rounded">
 				  <div class="bg-gradient-primary text-light p-4 rounded">
-					<h3 class="text-center"><i class="far fa-edit"></i> Formulario de Cadastro de Classe</h3>
+					<h3 class="text-center"><i class="fas fa-list"></i> Lista de Disciplinas</h3>
 				  </div>
-				  <div class="bg-light p-4 rounded">
-					<p class="text-success font-weight-bold">Dica:</p>Forneca os dados da Classe que pretende registar no formulario abaixo. <span class="text-danger">Codigo:</span> Valor Numerico. <span class="text-danger">Descricao:</span> Valor Textual.
-				  </div>				
+				  				  			
+				</div>
+				
+				<div>
+					<table class="table table-hover table-responsive-md">
+					  <thead>
+					    <tr>
+					      <th scope="col" class="text-center">Codigo</th>
+					      <th scope="col" class="text-center">Nome</th>
+					      <th scope="col" class="text-center">Editar</th>
+					      <th scope="col" class="text-center">Apagar</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr th:each = "disciplina: ${lista}">
+					      <td class="text-center"><span th:text = "${disciplina.codigo}"></span></td>
+					      <td class="text-center"><span th:text = "${disciplina.nomeDisciplina}"></span></td>
+					      <td class="text-center"><i class="fas fa-pencil-alt"></i></td>
+					      <td class="text-center"><a th:href = "${(#mvc.url('DC#apagarDisciplina').arg(0, disciplina.codigo)).build()}"><i class="fas fa-trash"></i></a></td>
+					    </tr>
+					   </tbody>
+					  </table>
 				</div>
 			</div>
 			
-			<div class="container col-10">
-				<p class="h4">Dados da Classe</p>
-				<div class="container justify-content-sm-center border rounded">
-						<form class="p-2" action="/classe" method="POST">
-							<div class="form-group">
-								<label for="codigo">Codigo:</label>
-								
-								<input type="number" name="codigo" value="" placeholder="Introduza o codigo da Classe" class="form-control"/>
-							</div>
-							<div class="form-group">
-								<label for="descricao">Descricao:</label>
-								<input type="text" name="descricao" value="" placeholder="Introduza a Descricao da Classe" class="form-control"/>
-							</div>
-							<div class="form-group">
-								<button type="submit" class="btn btn-primary">Gravar <i class="fas fa-database"></i></button>
-							</div>
-						</form>
-				</div>
-			</div>
+			
 		</section>
 
 		<aside class="col-sm-12 col-md-3 bg-light ml-auto  ">
@@ -113,14 +117,14 @@
 				<h2 class="mt-2">Menu: </h2>
 
 				<div class="list-group">
-					<a href="#" class="list-group-item list-group-item-action text-center active">
-						<i class="fas fa-plus"></i> Adicionar Classe
+					<a href="/disciplina" class="list-group-item list-group-item-action  text-center">
+						<i class="fas fa-plus"></i> Adicionar Disciplina
 					</a>
-					<a href="/classe/lista" class="list-group-item list-group-item-action text-center">
-						<i class="fas fa-list"></i> Lista de Classes
+					<a href="/disciplina/lista" class="list-group-item list-group-item-action active text-center">
+						<i class="fas fa-list"></i> Lista de Disciplinas
 					</a>
-					<a href="#" class="list-group-item list-group-item-action text-center">Opcao 3</a>
-					<a href="#" class="list-group-item list-group-item-action text-center">Opcao 4</a>
+					<a href="#" class="list-group-item list-group-item-action  text-center">Opcao 3</a>
+					<a href="#" class="list-group-item list-group-item-action  text-center">Opcao 4</a>
 				</div>
 			</div>
 		</aside>
@@ -156,8 +160,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="../js/jquery.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
   </body>
 </html>
