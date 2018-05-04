@@ -82,7 +82,7 @@
 			<div class="container mb-4">
 				<div class="border rounded">
 				  <div class="bg-gradient-primary text-light p-4 rounded">
-					<h3 class="text-center"><i class="fas fa-list"></i> Lista de Classe</h3>
+					<h3 class="text-center"><i class="fas fa-list"></i> Lista de Turmas</h3>
 				  </div>
 				  				  			
 				</div>
@@ -98,11 +98,11 @@
 					    </tr>
 					  </thead>
 					  <tbody>
-					    <tr th:each = "classe: ${lista}">
-					      <td class="text-center"><span th:text = "${classe.codigo}"></span></td>
-					      <td class="text-center"><span th:text = "${classe.descricao}"></span></td>
-					      <td class="text-center"><i class="fas fa-pencil-alt"></i></td>
-					      <td class="text-center"><i class="fas fa-trash"></i></td>
+					    <tr th:each = "turma: ${lista}">
+					      <td class="text-center"><span th:text = "${turma.codigo}"></span></td>
+					      <td class="text-center"><span th:text = "${turma.nome}"></span></td>
+					      <td class="text-center"><a th:href = "${(#mvc.url('TC#actualizarTurma').arg(0, turma.codigo)).build()}"><i class="fas fa-pencil-alt"></a></i></td>
+					      <td class="text-center"><a th:href = "${(#mvc.url('TC#apagarTurma').arg(0, turma.codigo)).build()}"><i class="fas fa-trash"></i></a></td>
 					    </tr>
 					   </tbody>
 					  </table>
@@ -117,11 +117,11 @@
 				<h2 class="mt-2">Menu: </h2>
 
 				<div class="list-group">
-					<a href="/classe" class="list-group-item list-group-item-action  text-center">
-						<i class="fas fa-plus"></i> Adicionar Classe
+					<a href="/turma" class="list-group-item list-group-item-action text-center">
+						<i class="fas fa-plus"></i> Adicionar Turma
 					</a>
-					<a href="/classe/lista" class="list-group-item list-group-item-action active text-center">
-						<i class="fas fa-list"></i> Lista de Classes
+					<a href="/turma/lista" class="list-group-item list-group-item-action  active text-center">
+						<i class="fas fa-list"></i> Lista de Turmas
 					</a>
 					<a href="#" class="list-group-item list-group-item-action  text-center">Opcao 3</a>
 					<a href="#" class="list-group-item list-group-item-action  text-center">Opcao 4</a>

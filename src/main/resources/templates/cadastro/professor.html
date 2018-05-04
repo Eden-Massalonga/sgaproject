@@ -1,5 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"
+	xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+> 
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -10,9 +13,9 @@
   	<link rel="stylesheet" href="css/fontawesome-all.css" />
   	<link rel="shortcut icon" type="image/x-icon" href="webfonts/user.svg" />
     <title> SGA</title>
-  </head>
+ </head>
 
-  <body class="bg-light">
+ <body class="bg-light">
 
 		<nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary shadow-sm">
       <div class="container">
@@ -89,36 +92,45 @@
 			<div class="container col-10">
 				<p class="h4">Dados da Professor</p>
 				<div class="container justify-content-sm-center border rounded">
-						<form class="p-2">
+						<form class="p-2" action="/professor"  method="post">
 							<div class="form-group">
 								<label for="codigo">Codigo:</label>
 								
-								<input type="number" name="codigo" placeholder="Introduza o codigo da Classe" class="form-control"/>
+								<input type="number" name="codigo" placeholder="Introduza o codigo do Professor" class="form-control"/>
 							</div>
 							<div class="form-group">
-								<label for="descricao">Nome:</label>
-								<input type="text" name="descricao" placeholder="Introduza a Descricao da Classe" class="form-control"/>
+								<label for="nome">Nome:</label>
+								<input type="text" name="nome" placeholder="Introduza o Nome do Professor" class="form-control"/>
+							</div>
+							<div class="form-group form-row">
+							<label class="col-sm-2">Sexo:</label> 
+								<div class="form-check col-sm-2">
+									<input type="radio" name="sexo" value="M" id="rM" class="form-check-input"/>
+									<label for="rM" class="form-check-label">Masculino</label>
+								</div>
+								<div class="form-check col-sm-2">
+									<input type="radio" name="sexo" value="F" id="rF" class="form-check-input"/>
+									<label for="rF" class="form-check-label">Feminino</label>
+								</div>
 							</div>
 							<div class="form-group">
-								<label for="descricao">Sexo:</label>
-								<input type="text" name="descricao" placeholder="Introduza a Descricao da Classe" class="form-control"/>
+								<label for="dataNasc">Data de Nascimento:</label>
+								<input type="date" name="dataNasc" class="form-control"/>
 							</div>
 							<div class="form-group">
-								<label for="descricao">Data de Nascimento:</label>
-								<input type="date" name="descricao" placeholder="Introduza a Descricao da Classe" class="form-control"/>
+								<label for="formacao">Formacao:</label>
+								<input type="text" name="formacao" placeholder="Introduza a Formacao do Professor" class="form-control"/>
 							</div>
 							<div class="form-group">
-								<label for="descricao">Formacao:</label>
-								<input type="text" name="descricao" placeholder="Introduza a Descricao da Classe" class="form-control"/>
+								<label for="telefone">Telefone:</label>
+								<input type="number" name="telefone" placeholder="Introduza o Numero de Telefone do Professor" class="form-control"/>
 							</div>
+							
 							<div class="form-group">
-								<label for="descricao">Telefone:</label>
-								<input type="number" name="descricao" placeholder="Introduza a Descricao da Classe" class="form-control"/>
+								<label for="morada">Morada:</label>
+								<input type="text" name="morada" placeholder="Introduza a Morada do Professor" class="form-control"/>
 							</div>
-							<div class="form-group">
-								<label for="descricao">Morada:</label>
-								<input type="text" name="descricao" placeholder="Introduza a Descricao da Classe" class="form-control"/>
-							</div>
+							
 							<div class="form-group">
 								<button type="reset" class="btn btn-danger">Limpar</button>
 								<button type="submit" class="btn btn-primary ">Gravar</button>
@@ -133,13 +145,14 @@
 				<h2 class="mt-2">Menu: </h2>
 
 				<div class="list-group">
-					<a href="#" class="list-group-item list-group-item-action active">
-					Opcao 1
+					<a href="/professor" class="list-group-item list-group-item-action active text-center">
+						<i class="fas fa-plus"></i> Adicionar Professor
 					</a>
-					<a href="#" class="list-group-item list-group-item-action">Opcao 2</a>
-					<a href="#" class="list-group-item list-group-item-action">Opcao 3</a>
-					<a href="#" class="list-group-item list-group-item-action">Opcao 4</a>
-					<a href="#" class="list-group-item list-group-item-action disabled">Opcao 5</a>
+					<a href="/professor/lista" class="list-group-item list-group-item-action text-center">
+						<i class="fas fa-list"></i> Lista de Professores
+					</a>
+					<a href="#" class="list-group-item list-group-item-action  text-center">Opcao 3</a>
+					<a href="#" class="list-group-item list-group-item-action  text-center">Opcao 4</a>
 				</div>
 			</div>
 		</aside>

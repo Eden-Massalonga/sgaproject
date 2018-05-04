@@ -27,6 +27,15 @@ public class DisciplinaService {
 			return lista;
 		}
 		
+		public List <Disciplina> encontraDisciplina(int codigo){
+			List <Disciplina> lista = new ArrayList <>();
+			
+			Disciplina disc = dR.findByCodigo(codigo);
+			lista.add(disc);
+			
+			return lista;
+		}
+		
 		public void apagaDisciplina(int codigo) {
 			dR.deleteById(codigo);
 		}

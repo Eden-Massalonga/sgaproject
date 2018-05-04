@@ -6,4 +6,5 @@ import mz.sgaspringapp.model.Disciplina;
 
 public interface DisciplinaRepository extends CrudRepository <Disciplina, Integer>{
 
+	public Disciplina findByCodigo(int codigo);
 }

@@ -69,12 +69,12 @@ public class Professor {
 		this.telefone = telefone;
 	}
 
-	public String getmorada() {
+	public String getMorada() {
 		return morada;
 	}
 
-	public void setNomorada(String nomorada) {
-		this.morada = nomorada;
+	public void setMorada(String morada) {
+		this.morada = morada;
 	}
 	
 }

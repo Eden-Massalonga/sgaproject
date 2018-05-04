@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.css" />
-  	<link rel="stylesheet" href="../css/fontawesome-all.css" />
+    <link rel="stylesheet" href="../../css/bootstrap.css" />
+  	<link rel="stylesheet" href="../../css/fontawesome-all.css" />
   	<link rel="shortcut icon" type="image/x-icon" href="webfonts/user.svg" />
     <title> SGA</title>
   </head>
@@ -71,7 +71,7 @@
 	<nav aria-label="breadcrumb">
 			<ol class="breadcrumb justify-content-sm-center mb-1">
 				<li class="breadcrumb-item"><a href="/">Inicio</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Cadastro - Disciplina</li>
+				<li class="breadcrumb-item active" aria-current="page">Cadastro - Professor</li>
 			</ol>
 	</nav>
 
@@ -82,28 +82,52 @@
 			<div class="container mb-4">
 				<div class="border rounded">
 				  <div class="bg-gradient-primary text-light p-4 rounded">
-					<h3 class="text-center"><i class="fas fa-list"></i> Lista de Disciplinas</h3>
+					<h3 class="text-center"><i class="fas fa-list"></i> Dados do Professor</h3>
 				  </div>
 				  				  			
 				</div>
 				
 				<div>
-					<table class="table table-hover table-responsive-md">
-					  <thead>
+					<table class="table table-hover justify-content-sm-center">
+					  
+					  <tbody th:each = "professor: ${lista}">
 					    <tr>
-					      <th scope="col" class="text-center">Codigo</th>
-					      <th scope="col" class="text-center">Nome</th>
-					      <th scope="col" class="text-center">Editar</th>
-					      <th scope="col" class="text-center">Apagar</th>
+					      <th scope="row" class="text-left">Codigo</th>
+					      <td class="text-justify"><span th:text = "${professor.codigo}"></span></td>
 					    </tr>
-					  </thead>
-					  <tbody>
-					    <tr th:each = "disciplina: ${lista}">
-					      <td class="text-center"><span th:text = "${disciplina.codigo}"></span></td>
-					      <td class="text-center"><span th:text = "${disciplina.nomeDisciplina}"></span></td>
-					      <td class="text-center"><a th:href="${(#mvc.url('DC#actualizarDisciplina').arg(0, disciplina.codigo)).build()}"><i class="fas fa-pencil-alt"></i></a></td>
-					      <td class="text-center"><a th:href = "${(#mvc.url('DC#apagarDisciplina').arg(0, disciplina.codigo)).build()}"><i class="fas fa-trash"></i></a></td>
+					    <tr>
+					      <th scope="row" class="text-left">Nome</th>
+					      <td class="text-justify"><a th:href = "${(#mvc.url('PC#actualizarProfessor').arg(0, professor.codigo)).build()}"><span th:text = "${professor.nome}"></span></a></td>
 					    </tr>
+					    <tr>
+					      <th scope="row" class="text-left">Sexo</th>
+					      <td class="text-justify"><span th:text = "${professor.sexo}"></span></td>
+					    </tr>
+					    <tr>
+					      <th scope="row" class="text-left">Data de Nascimento</th>
+					      <td class="text-justify"><span th:text = "${professor.dataNasc}"></span></td>
+					    </tr>
+					    <tr>
+					      <th scope="row" class="text-left">Formacao</th>
+					      <td class="text-justify"><span th:text = "${professor.formacao}"></span></td>
+					    </tr>  
+					    <tr>
+					      <th scope="row" class="text-left">Telefone</th>
+					      <td class="text-justify"><span th:text = "${professor.telefone}"></span></td>
+					    </tr>  
+					    <tr>
+					      <th scope="col" class="text-left">Morada</th>
+					      <td class="text-justify"><span th:text = "${professor.morada}"></span></td>
+					    </tr>  
+					    <tr>
+					      <th scope="row" class="text-center">Editar</th>
+					      <td class="text-center"><a th:href = "${(#mvc.url('PC#actualizarProfessor').arg(0, professor.codigo)).build()}"><i class="fas fa-pencil-alt"></a></i></td>
+					    </tr>  
+					    <tr>
+					      <th scope="row" class="text-center">Apagar</th>
+					      <td class="text-center"><a th:href = "${(#mvc.url('PC#apagarProfessor').arg(0, professor.codigo)).build()}"><i class="fas fa-trash"></i></a></td>
+					    </tr>   
+			
 					   </tbody>
 					  </table>
 				</div>
@@ -117,11 +141,11 @@
 				<h2 class="mt-2">Menu: </h2>
 
 				<div class="list-group">
-					<a href="/disciplina" class="list-group-item list-group-item-action  text-center">
-						<i class="fas fa-plus"></i> Adicionar Disciplina
+					<a href="/professor" class="list-group-item list-group-item-action text-center">
+						<i class="fas fa-plus"></i> Adicionar Professor
 					</a>
-					<a href="/disciplina/lista" class="list-group-item list-group-item-action active text-center">
-						<i class="fas fa-list"></i> Lista de Disciplinas
+					<a href="/professor/lista" class="list-group-item list-group-item-action text-center">
+						<i class="fas fa-list"></i> Lista de Professores
 					</a>
 					<a href="#" class="list-group-item list-group-item-action  text-center">Opcao 3</a>
 					<a href="#" class="list-group-item list-group-item-action  text-center">Opcao 4</a>
@@ -160,8 +184,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../js/jquery.slim.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.js"></script>
+    <script src="../../js/jquery.slim.min.js"></script>
+    <script src="../../js/popper.min.js"></script>
+    <script src="../../js/bootstrap.js"></script>
   </body>
 </html>

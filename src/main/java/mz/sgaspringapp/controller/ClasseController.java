@@ -40,7 +40,7 @@ public class ClasseController {
 	
 	@RequestMapping("/classe/{codigo}")
 	public ModelAndView actualizarClasse(@PathVariable ("codigo") int codigo) {
-		ModelAndView mv = new ModelAndView ("cadastro/classe");
+		ModelAndView mv = new ModelAndView ("cadastro/classe/actualiza");
 				
 		mv.addObject("classes",cSer.encontraClasse(codigo));
 		

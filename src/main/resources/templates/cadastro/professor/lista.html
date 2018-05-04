@@ -71,7 +71,7 @@
 	<nav aria-label="breadcrumb">
 			<ol class="breadcrumb justify-content-sm-center mb-1">
 				<li class="breadcrumb-item"><a href="/">Inicio</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Cadastro - Classe</li>
+				<li class="breadcrumb-item active" aria-current="page">Cadastro - Professor</li>
 			</ol>
 	</nav>
 
@@ -82,7 +82,7 @@
 			<div class="container mb-4">
 				<div class="border rounded">
 				  <div class="bg-gradient-primary text-light p-4 rounded">
-					<h3 class="text-center"><i class="fas fa-list"></i> Lista de Classe</h3>
+					<h3 class="text-center"><i class="fas fa-list"></i> Lista de Professores</h3>
 				  </div>
 				  				  			
 				</div>
@@ -92,17 +92,21 @@
 					  <thead>
 					    <tr>
 					      <th scope="col" class="text-center">Codigo</th>
-					      <th scope="col" class="text-center">Descricao</th>
+					      <th scope="col" class="text-justify">Nome</th>
+					      <th scope="col" class="text-center">Sexo</th>
+					      <th scope="col" class="text-center">Telefone</th>
 					      <th scope="col" class="text-center">Editar</th>
 					      <th scope="col" class="text-center">Apagar</th>
 					    </tr>
 					  </thead>
 					  <tbody>
-					    <tr th:each = "classe: ${lista}">
-					      <td class="text-center"><span th:text = "${classe.codigo}"></span></td>
-					      <td class="text-center"><span th:text = "${classe.descricao}"></span></td>
-					      <td class="text-center"><i class="fas fa-pencil-alt"></i></td>
-					      <td class="text-center"><i class="fas fa-trash"></i></td>
+					    <tr th:each = "professor: ${lista}">
+					      <td class="text-center"><span th:text = "${professor.codigo}"></span></td>
+					      <td class="text-justify"><a th:href = "${(#mvc.url('PC#detalhesProfessor').arg(0, professor.codigo)).build()}"><span th:text = "${professor.nome}"></span></a></td>
+					      <td class="text-center"><span th:text = "${professor.sexo}"></span></td>
+					      <td class="text-center"><span th:text = "${professor.telefone}"></span></td>
+					      <td class="text-center"><a th:href = "${(#mvc.url('PC#actualizarProfessor').arg(0, professor.codigo)).build()}"><i class="fas fa-pencil-alt"></a></i></td>
+					      <td class="text-center"><a th:href = "${(#mvc.url('PC#apagarProfessor').arg(0, professor.codigo)).build()}"><i class="fas fa-trash"></i></a></td>
 					    </tr>
 					   </tbody>
 					  </table>
@@ -117,11 +121,11 @@
 				<h2 class="mt-2">Menu: </h2>
 
 				<div class="list-group">
-					<a href="/classe" class="list-group-item list-group-item-action  text-center">
-						<i class="fas fa-plus"></i> Adicionar Classe
+					<a href="/professor" class="list-group-item list-group-item-action text-center">
+						<i class="fas fa-plus"></i> Adicionar Professor
 					</a>
-					<a href="/classe/lista" class="list-group-item list-group-item-action active text-center">
-						<i class="fas fa-list"></i> Lista de Classes
+					<a href="/professor/lista" class="list-group-item list-group-item-action  active text-center">
+						<i class="fas fa-list"></i> Lista de Professores
 					</a>
 					<a href="#" class="list-group-item list-group-item-action  text-center">Opcao 3</a>
 					<a href="#" class="list-group-item list-group-item-action  text-center">Opcao 4</a>
