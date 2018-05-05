@@ -2,6 +2,7 @@ package mz.sgaspringapp.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Turma {
@@ -9,7 +10,7 @@ public class Turma {
 	@Id
 	private int codigo;
 	private String nome;
-	
+		
 	public Turma() {
 		
 	}
@@ -34,5 +35,5 @@ public class Turma {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-		
+
 }

@@ -8,5 +8,7 @@ public class SgaSpringAppApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SgaSpringAppApplication.class, args);
+		
+		
 	}
 }

@@ -1,0 +1,25 @@
+					<thead>
+					    <tr>
+					      <th scope="col" class="text-center">Codigo</th>
+					      <th scope="col" class="text-center">Nome</th>
+					      <th scope="col" class="text-center">Sexo</th>
+					      <th scope="col" class="text-center">Data de Nascimento</th>
+					      <th scope="col" class="text-center">Formacao</th>
+					      <th scope="col" class="text-center">Telefone</th>
+					      <th scope="col" class="text-center">Morada</th>
+					      <th scope="col" class="text-center">Editar</th>
+					      <th scope="col" class="text-center">Apagar</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr th:each = "professor: ${lista}">
+					      <td class="text-center"><span th:text = "${professor.codigo}"></span></td>
+					      <td class="text-center"><a th:href = "${(#mvc.url('PC#actualizarProfessor').arg(0, professor.codigo)).build()}"><span th:text = "${professor.nome}"></span></a></td>
+					      <td class="text-center"><span th:text = "${professor.sexo}"></span></td>
+					      <td class="text-center"><span th:text = "${professor.dataNasc}"></span></td>
+					      <td class="text-center"><span th:text = "${professor.formacao}"></span></td>
+					      <td class="text-center"><span th:text = "${professor.telefone}"></span></td>
+					      <td class="text-center"><span th:text = "${professor.morada}"></span></td>
+					      <td class="text-center"><a th:href = "${(#mvc.url('PC#actualizarProfessor').arg(0, professor.codigo)).build()}"><i class="fas fa-pencil-alt"></a></i></td>
+					      <td class="text-center"><a th:href = "${(#mvc.url('PC#apagarProfessor').arg(0, professor.codigo)).build()}"><i class="fas fa-trash"></i></a></td>
+					    </tr>
